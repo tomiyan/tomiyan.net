@@ -1,0 +1,36 @@
+{
+  "name": "with-static-export",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "isomorphic-fetch": "^2.2.1",
+    "jss": "latest",
+    "material-ui": "next",
+    "next": "^4.2.1",
+    "prop-types": "latest",
+    "qrcode.react": "^0.7.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-jss": "latest",
+    "serve": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.5.2",
+    "@types/qrcode.react": "^0.6.2",
+    "@types/isomorphic-fetch": "^0.0.34",
+    "@types/next": "^2.4.5",
+    "@types/react": "^16.0.22",
+    "concurrently": "^3.5.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
+  },
+  "scripts": {
+    "dev": "concurrently \"tsc --pretty --watch\" \"next\"",
+    "prebuild": "tsc",
+    "build": "next build",
+    "preexport": "npm run build",
+    "export": "next export",
+    "prestart": "npm run export",
+    "start": "serve out"
+  }
+}
